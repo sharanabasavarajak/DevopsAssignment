@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node-app:
+    image: node-app:latest
+    environment:
+      PORT: 3000
+      PROXY_API: http://python-app:5000/
+    ports:
+      - 3000:3000
+  python-app:
+    image: python-app:latest
+    ports:
+      - 5000:5000
